@@ -15,7 +15,6 @@
 </head>
 
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-content">
@@ -33,11 +32,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="floating-badge badge-1">AI-powered analysis</div>
-            <div class="floating-badge badge-2">Available on Telegram</div>
+            <div class="floating-badge badge-2">Powered by n8n</div>
             <div class="floating-badge badge-3">Safe & Ethical Content</div>
 
             <h1 class="hero-title">
@@ -73,7 +71,6 @@
         </div>
     </section>
 
-    <!-- Problem Section -->
     <section class="problem-section">
         <div class="container">
             <div class="section-header">
@@ -102,7 +99,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section id="features" class="features-section">
         <div class="container">
             <div class="section-header">
@@ -156,7 +152,6 @@
         </div>
     </section>
 
-    <!-- How It Works Section -->
     <section id="how-it-works" class="how-section">
         <div class="container">
             <div class="section-header">
@@ -167,30 +162,29 @@
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="step-number">1</div>
-                    <h3>Open Telegram</h3>
-                    <p>Search for @TruthBot on Telegram or click the link below to start chatting.</p>
+                    <h3>Submit Your Link</h3>
+                    <p>Copy and paste the news article URL or text into our AI chatbot.</p>
                 </div>
 
                 <div class="step-arrow">→</div>
 
                 <div class="step-card">
                     <div class="step-number">2</div>
-                    <h3>Send Your Link</h3>
-                    <p>Share the news article URL or text directly in the Telegram chat.</p>
+                    <h3>AI Analysis</h3>
+                    <p>Our AI system cross-checks content against trusted Singapore news sources.</p>
                 </div>
 
                 <div class="step-arrow">→</div>
 
                 <div class="step-card">
                     <div class="step-number">3</div>
-                    <h3>Get Instant Results</h3>
-                    <p>TruthBot analyzes the content and replies with credibility assessment instantly.</p>
+                    <h3>Get Results</h3>
+                    <p>Receive instant credibility assessment with detailed explanations.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact Section -->
     <section id="impact" class="impact-section">
         <div class="container">
             <div class="section-header">
@@ -237,115 +231,60 @@
         </div>
     </section>
 
-    <!-- Try It Out Section -->
-    <section class="tryout-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Try It Now</span>
-                <h2>Test TruthBot Right Here</h2>
-                <p class="section-description">Experience our AI-powered fake news detection instantly. Paste a news
-                    link below and see how it works!</p>
-            </div>
-
-            <div class="tryout-container">
-                <div class="tryout-box">
-                    <div class="tryout-icon">🔍</div>
-                    <h3>Quick Demo</h3>
-                    <p>Try our bot directly on this page or use the full version on Telegram</p>
-
-                    <!-- Web-based bot integration placeholder -->
-                    <div class="web-bot-container">
-                        <!-- Replace this with your n8n webhook form or embedded chat widget -->
-                        <div class="bot-demo-placeholder">
-                            <p class="integration-note">💡 <strong>Integration Point:</strong> Add your n8n webhook form
-                                or chat widget here</p>
-
-                            <!-- Example form structure - customize based on your n8n setup -->
-                            <form id="verification-form" class="verification-form">
-                                <div class="input-group">
-                                    <input type="url" id="news-url" placeholder="Paste news article URL here..."
-                                        required class="url-input">
-                                    <button type="submit" class="verify-button">
-                                        <span class="button-text">Verify Now</span>
-                                        <span class="button-icon">→</span>
-                                    </button>
-                                </div>
-                            </form>
-
-                            <div id="result-container" class="result-container" style="display: none;">
-                                <div class="result-content">
-                                    <div class="result-icon">🤖</div>
-                                    <div class="result-text">
-                                        <p id="result-message">Analyzing...</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p class="helper-text">Enter a news article URL to check its credibility</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section with Telegram Bot -->
-
     <section id="verify" class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Start Verifying News on Telegram</h2>
+                <h2>Start Verifying News Now</h2>
                 <p class="cta-description">
-                    TruthBot is available 24/7 on Telegram. Chat with our AI to instantly verify any news article or
-                    claim.
+                    Our AI-powered chatbot is ready to help you identify fake news. Simply paste a link or describe the
+                    news you want to verify.
                 </p>
 
-                <div class="telegram-cta">
-                    <div class="telegram-icon">📱</div>
-                    <h3>Chat with TruthBot on Telegram</h3>
-                    <p class="telegram-instruction">Search for <strong>@TruthBot</strong> on Telegram or click the
-                        button below</p>
+                <div id="n8n-chat-container"></div>
+                
+                <style>
+                  #n8n-chat-container {
+                    min-height: 600px;
+                    width: 100%;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    background-color: #ffffff;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                    margin-top: 20px;
+                  }
+                </style>
 
-                    <!-- Replace YOUR_TELEGRAM_BOT_USERNAME with your actual bot username -->
-                    <a href="https://t.me/YOUR_TELEGRAM_BOT_USERNAME" target="_blank" class="telegram-button">
-                        <svg class="telegram-svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
-                        </svg>
-                        Open TruthBot on Telegram
-                    </a>
+                <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+                <script type="module">
+                    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
-                    <div class="telegram-features">
-                        <div class="feature-item">
-                            <span class="check-icon">✓</span>
-                            <span>Instant responses</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="check-icon">✓</span>
-                            <span>Chat history saved</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="check-icon">✓</span>
-                            <span>Mobile & Desktop friendly</span>
-                        </div>
-                    </div>
-
-                    <div class="demo-preview">
-                        <p class="demo-label">Example Conversation:</p>
-                        <div class="chat-bubble user-bubble">
-                            <p>Can you verify this article? [news link]</p>
-                        </div>
-                        <div class="chat-bubble bot-bubble">
-                            <p>🤖 Analyzing... This article appears to be <strong>CREDIBLE</strong>. Cross-referenced
-                                with Straits Times and CNA. Published by verified source.</p>
-                        </div>
-                    </div>
+                    createChat({
+                        webhookUrl: 'https://ngweijun.app.n8n.cloud/webhook/61592ef8-d6b9-44a5-b913-056938d659a5/chat',
+                        target: '#n8n-chat-container',
+                        mode: 'fullscreen',
+                        showWelcomeScreen: true,
+                        initialMessages: [
+                            'Hi! I\'m TruthBot. Send me a news link or article text to verify!'
+                        ],
+                        i18n: {
+                            en: {
+                                title: 'TruthBot',
+                                subtitle: 'AI Truth Verifier',
+                                getInputPlaceholder: 'Paste your article or link here...',
+                            }
+                        },
+                        style: {
+                            default: {
+                                primaryColor: '#7F56D9',
+                                borderRadius: '12px',
+                            }
+                        }
+                    });
+                </script>
                 </div>
-            </div>
         </div>
     </section>
 
-    <!-- Target Audience Section -->
     <section class="audience-section">
         <div class="container">
             <div class="section-header">
@@ -375,7 +314,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -412,7 +350,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 TruthBot. Available on Telegram. All rights reserved.</p>
+                <p>&copy; 2026 TruthBot. Built with n8n. All rights reserved.</p>
             </div>
         </div>
     </footer>
